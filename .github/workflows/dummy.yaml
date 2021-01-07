@@ -1,0 +1,11 @@
+name: Dummy
+
+on: push
+
+jobs:
+    do-nothing:
+        name: Do Nothing
+        runs-on: ubuntu-latest
+    steps:
+        name: Checkout code
+        uses: actions/checkout@v2
