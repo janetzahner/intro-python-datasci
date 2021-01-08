@@ -8,6 +8,15 @@ if [ ! -d ".git" ]; then
 fi
 
 # Match all notebook files with content.
-for file in nb_scripts/*.py; do
-    python $file
+failures=0
+cd nb_scripts
+for file in *.py; do
+    # Run the file and increment the failures if it fails
+    python $file || ((failures=failures+1))
 done
+
+if [ "$failures" -gt "0" ]; then
+    >&2 echo "$failures failures"
+fi
+
+exit $failures
