@@ -10,6 +10,10 @@ jobs:
         - name: Checkout code
           uses: actions/checkout@v2
         - name: Setup Conda Environment
-          uses: matthewrmshin/conda-action@v1
+          uses: conda-incubator/setup-miniconda@v2
           with:
-            args: conda env update -f environment.yml
+            activate-environment: uc-python
+            environment-file: environment.yml
+        - run: |
+            conda info
+            conda list
