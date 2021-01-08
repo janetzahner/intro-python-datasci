@@ -22,3 +22,7 @@ jobs:
           shell: bash -l {0}
           run: 
             bash scripts/generate_scripts.sh
+        - name: Run scripts
+          shell: bash -l {0}
+          run:
+            bash scripts/test_nb_scripts.sh
