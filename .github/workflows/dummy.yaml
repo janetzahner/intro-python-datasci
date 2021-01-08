@@ -3,9 +3,13 @@ name: Dummy
 on: push
 
 jobs:
-    do-nothing:
-      name: Do Nothing
+    validate-notebooks:
+      name: Validate Notebooks
       runs-on: ubuntu-latest
       steps:
         - name: Checkout code
           uses: actions/checkout@v2
+        - name: Setup Conda Environment
+          uses: matthewrmshin/conda-action@v1
+          with:
+            args: conda env update -f environment.yml
