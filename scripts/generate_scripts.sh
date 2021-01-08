@@ -10,6 +10,5 @@ fi
 mkdir -p nb_scripts
 # Match all notebook files with content.
 for file in notebooks/*-*.ipynb; do
-    # jupyter nbconvert --to slides $file --reveal-prefix https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.3.0 --output-dir=../slides
-    jupyter nbconvert --to python $file --output-dir=../nb_scripts
+    jupyter nbconvert --to python $file --output-dir=nb_scripts/
 done
