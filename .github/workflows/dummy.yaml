@@ -18,5 +18,3 @@ jobs:
           run: |
             conda info
             conda list
-          with:
-            activate-environment: uc-python
