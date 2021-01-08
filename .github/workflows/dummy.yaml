@@ -15,6 +15,7 @@ jobs:
             activate-environment: uc-python
             environment-file: environment.yml
         - name: Diagnose
+          shell: bash -l {0}
           run: |
             conda info
             conda list
